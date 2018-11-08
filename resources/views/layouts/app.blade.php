@@ -2,6 +2,7 @@
 <html lang="{{ config('app.locale') }}">
 <head>
     @include('layouts.partials.html_header')
+    @yield('additional_style')
 </head>
 
 <body>

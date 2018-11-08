@@ -24,3 +24,6 @@ coverage*
 /public/storage
 npm-debug.log
 /node_modules
+
+#databases
+/database/database.sqlite

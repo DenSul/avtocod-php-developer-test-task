@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page_title' => 'Welcome!'])
+@extends('layouts.app', ['page_title' => 'Стена сообщений!'])
 
 @section('html_header')
 <!-- Additional header tags -->
