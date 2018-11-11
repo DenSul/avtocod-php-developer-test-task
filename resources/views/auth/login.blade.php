@@ -9,9 +9,13 @@
 
         <form class="form-signin" method="POST" action="{{ route('login') }}">
             @csrf
-            @alert(['type' => 'danger'])
-            <strong>Ошибка!</strong> Вход в систему с указанными данными невозможен.
-            @endalert
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    @alert(['type' => 'danger'])
+                    {{$error}}
+                    @endalert
+                @endforeach
+            @endif
 
             <h2 class="form-signin-heading">Авторизация</h2>
 

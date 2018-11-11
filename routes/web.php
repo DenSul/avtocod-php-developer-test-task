@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'PostsController@index')->name('posts');
-Route::get('/posts', 'HomeController@index')->name('home');
+Route::get('/posts', 'PostsController@index')->name('home');
+Route::post('/posts', 'PostsController@store')->name('post.create')->middleware('auth');
+Route::get('/delete/{id}', 'PostsController@delete')->name('post.delete')->middleware('auth');
 
 /*
 | Когда они успели сделать логоут через POST? O_o

@@ -8,8 +8,8 @@
 
 namespace App\Widgets\Navbar;
 
-use App\Request\Navbar\NavbarMenu,
-    App\Request\Navbar\NavbarMenuItem,
+use App\Domain\Navbar\NavbarMenu,
+    App\Domain\Navbar\NavbarMenuItem,
     Auth;
 
 class Navbar

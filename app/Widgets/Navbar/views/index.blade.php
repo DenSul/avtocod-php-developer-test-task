@@ -12,14 +12,14 @@
             <a class="navbar-brand" href="#">Avtocod | Стена сообщений</a>
         </div>
         <ul class="nav navbar-nav">
-            @foreach ($navbarMenu->getAllMasked([\App\Request\Navbar\NavbarMenu::MASK_ALL,
-                            \App\Request\Navbar\NavbarMenu::MASK_QUEST]) as $item)
+            @foreach ($navbarMenu->getAllMasked([\App\Domain\Navbar\NavbarMenu::MASK_ALL,
+                            \App\Domain\Navbar\NavbarMenu::MASK_QUEST]) as $item)
                 <li @if ($item->isActive()) class="active" @endif> <a href="{{$item->getRoute()}}">{{$item->getTitle()}}</a></li>
             @endforeach
         </ul>
         @if ($navbarMenuUser->count() > 0)
             <ul class="nav navbar-nav navbar-right">
-                @foreach ($navbarMenuUser->getAllMasked([\App\Request\Navbar\NavbarMenu::MASK_USER]) as $item)
+                @foreach ($navbarMenuUser->getAllMasked([\App\Domain\Navbar\NavbarMenu::MASK_USER]) as $item)
                     <li class="@if ($item->getSpanClass()) {{$item->getSpanClass()}} @endif @if ($item->isActive()) active @endif">
                         @if ($item->getIcon())
                             <span class="{{$item->getIcon()}}"></span>

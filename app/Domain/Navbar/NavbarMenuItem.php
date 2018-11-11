@@ -6,10 +6,10 @@
  * Time: 16:52
  */
 
-namespace App\Request\Navbar;
+namespace App\Domain\Navbar;
 
 
-use Request, Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\URL;
 
 class NavbarMenuItem
 {

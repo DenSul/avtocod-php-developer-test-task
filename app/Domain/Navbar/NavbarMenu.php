@@ -6,7 +6,7 @@
  * Time: 17:12
  */
 
-namespace App\Request\Navbar;
+namespace App\Domain\Navbar;
 
 
 class NavbarMenu

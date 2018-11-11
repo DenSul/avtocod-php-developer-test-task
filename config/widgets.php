@@ -7,5 +7,6 @@
  */
 
 return [
-    'Navbar'
+    'Navbar',
+    'Posts'
 ];
