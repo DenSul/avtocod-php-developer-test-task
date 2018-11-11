@@ -15,5 +15,9 @@
     @include('layouts.partials.scripts')
 @show
 
+<style type="text/css">
+    .navbar-text a {padding: 0 !important; margin: 0 !important; display: inline !important;}
+</style>
+
 </body>
 </html>

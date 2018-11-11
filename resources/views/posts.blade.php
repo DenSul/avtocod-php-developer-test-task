@@ -10,25 +10,11 @@
             <h1>Сообщения от всех пользователей</h1>
         </div>
 
-        <form action="" method="post" class="form-horizontal">
-            @alert(['type' => 'danger'])
-            Error
-            @endalert
-            <div class="controls">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label for="message_text">Текст сообщения:</label>
-                        <textarea id="message_text" name="message_text" class="form-control"
-                                  placeholder="Ваше сообщение" rows="4"
-                                  required="required"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-12 text-center">
-                    <input type="submit" class="btn btn-success btn-send" value="Отправить сообщение" />
-                </div>
-            </div>
-        </form>
 
+        @Auth
+            @formPost()
+            @endformPost
+        @endAuth
         <div class="row wall-message">
             <div class="col-md-1 col-xs-2">
                 <img src="http://lorempixel.com/200/200/people/" alt="" class="img-circle user-avatar" />

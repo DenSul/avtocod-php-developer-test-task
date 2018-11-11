@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('posts');
-})->name('posts');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'PostsController@index')->name('posts');
+Route::get('/posts', 'HomeController@index')->name('home');
+
+/*
+| Когда они успели сделать логоут через POST? O_o
+| Это все из за того, что я решил делать виджет, уже пожалел.
+ */
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

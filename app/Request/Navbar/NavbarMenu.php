@@ -26,7 +26,7 @@ class NavbarMenu
      * @return $this
      */
 
-    public function add(NavbarMenuItem $item)
+    public function add(NavbarMenuItem $item): NavbarMenu
     {
         $this->items[] = $item;
         return $this;
@@ -56,7 +56,7 @@ class NavbarMenu
      * @return array
      */
 
-    public function all()
+    public function all(): array
     {
         return $this->items;
     }
@@ -65,7 +65,7 @@ class NavbarMenu
      * @return int
      */
 
-    public function count()
+    public function count(): int
     {
         return count($this->items);
     }

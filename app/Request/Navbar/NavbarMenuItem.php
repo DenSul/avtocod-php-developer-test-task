@@ -9,7 +9,7 @@
 namespace App\Request\Navbar;
 
 
-use Request, Illuminate\Support\Facades\URL;;
+use Request, Illuminate\Support\Facades\URL;
 
 class NavbarMenuItem
 {
@@ -21,14 +21,20 @@ class NavbarMenuItem
     private $visibleLevel = 'user';
     /** @var string  */
     private $icon = '';
+    /** @var string  */
+    private $spanClass = '';
 
     /**
      * NavbarMenu constructor.
      * @param string $title
      * @param string $route
      * @param string $visibleLevel
+     * @param string $icon
+     * @param string $spanClass
      */
-    public function __construct(string $title, string $route = '', string $visibleLevel = 'all', string $icon = '')
+    public function __construct(string $title, string $route = '',
+                                string $visibleLevel = 'all', string $icon = '',
+                                string $spanClass = '')
     {
         if ( $route ) {
             $route = route($route);
@@ -38,6 +44,15 @@ class NavbarMenuItem
         $this->route         = $route;
         $this->visibleLevel  = $visibleLevel;
         $this->icon          = $icon;
+        $this->spanClass     = $spanClass;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSpanClass(): string
+    {
+        return $this->spanClass;
     }
 
     /**

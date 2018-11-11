@@ -17,15 +17,20 @@ class Navbar
     public static function show(): \Illuminate\View\View
     {
         $navbarMenu = new NavbarMenu();
-        $navbarMenu->add(new NavbarMenuItem('Главная', 'posts', NavbarMenu::MASK_ALL))
-                   ->add(new NavbarMenuItem('Авторизация', 'login', NavbarMenu::MASK_QUEST))
-                   ->add(new NavbarMenuItem('Регистрация', 'register', NavbarMenu::MASK_QUEST));
+        $navbarMenu->add(new NavbarMenuItem('Главная', 'posts', NavbarMenu::MASK_ALL));
 
-        if ( Auth::check() ) {
-            $navbarMenu->add(new NavbarMenuItem(optional(Auth::check()->name)), '', NavbarMenu::MASK_USER, 'glyphicon glyphicon-user')
-                       ->add(new NavbarMenuItem('Выход', 'logout', NavbarMenu::MASK_USER, 'glyphicon glyphicon-log-out'));
+        if ( !Auth::check() ) {
+            $navbarMenu->add(new NavbarMenuItem('Авторизация', 'login', NavbarMenu::MASK_QUEST))
+                       ->add(new NavbarMenuItem('Регистрация', 'register', NavbarMenu::MASK_QUEST));
         }
 
-        return view('widget.Navbar::index', compact('navbarMenu'));
+        $navbarMenuUser = new NavbarMenu();
+
+        if ( Auth::check() ) {
+            $navbarMenuUser->add(new NavbarMenuItem('Привет ' . Auth::user()->login, '', NavbarMenu::MASK_USER, 'glyphicon glyphicon-user', 'navbar-text'))
+                           ->add(new NavbarMenuItem('Выход', 'logout', NavbarMenu::MASK_USER, 'glyphicon glyphicon-log-out', 'navbar-text'));
+        }
+
+        return view('widget.Navbar::index', compact('navbarMenu', 'navbarMenuUser'));
     }
 }

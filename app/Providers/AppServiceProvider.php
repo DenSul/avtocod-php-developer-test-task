@@ -14,8 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Reg. my alert view component
         Blade::component('components.alert', 'alert');
+        Blade::component('components.formPost', 'formPost');
     }
 
     /**
