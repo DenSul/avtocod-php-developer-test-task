@@ -6,14 +6,14 @@ use App\Repository\ManageAdministratorsRepository;
 use App\Service\ManageAdministratorsService;
 use Illuminate\Console\Command;
 
-class manageAdministrators extends Command
+class ManageAdministrators extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'manage:admin';
+    protected $signature = 'manage:admin {user?}';
 
     /**
      * The console command description.
@@ -47,7 +47,15 @@ class manageAdministrators extends Command
      */
     public function handle()
     {
-        $login = $this->anticipate('Введите логин пользователя', $this->repository->all()->pluck('login')->toArray());
+        if ( !$this->argument('user') )
+        {
+            $login = $this->anticipate('Введите логин пользователя', $this->repository->all()->pluck('login')->toArray());
+        }
+        else
+        {
+            $login = $this->argument('user');
+        }
+
 
         $user = $this->repository->findByLogin($login);
 

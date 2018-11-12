@@ -48,8 +48,8 @@ class TestsBootstrapper extends AbstractLaravelTestsBootstrapper
         /** @var Repository $config */
         $config = $this->app->make('config');
 
-        if ($config->get('database.default') === 'sqlite') {
-            $db_file_path = $config->get('database.connections.sqlite.database');
+        if ($config->get('database.default') === 'sqlite-test') {
+            $db_file_path = $config->get('database.connections.sqlite-test.database');
 
             if (!$this->files->exists($db_file_path)) {
                 $this->files->put($db_file_path, null);

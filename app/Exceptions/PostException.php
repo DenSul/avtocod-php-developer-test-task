@@ -11,7 +11,8 @@ class PostException extends Exception
     {
         return response()->view(
             'errors.post',
-            ['exception' => $this]
+            ['exception' => $this],
+            404
         );
     }
 }

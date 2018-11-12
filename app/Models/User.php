@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Posts;
 
 class User extends Authenticatable
 {
@@ -30,4 +31,21 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    /**
+     * @var array
+     */
+
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+
+    public function messages()
+    {
+        return $this->hasMany(\App\Models\Posts::class);
+    }
 }

@@ -15,16 +15,16 @@
             <h2 class="form-signup-heading">Регистрация</h2>
 
             <label for="user_name" class="sr-only">Ваше имя</label>
-            <input type="text" id="user_name" class="form-control" placeholder="Имя" name="name" required autofocus>
+            <input type="text" id="user_name" class="form-control" placeholder="Имя" autocomplete="off"  name="name"  autofocus>
 
             <label for="user_login" class="sr-only">Логин</label>
-            <input type="text" id="user_login" class="form-control" placeholder="Логин" name="login" required>
+            <input type="text" id="user_login" class="form-control" placeholder="Логин" autocomplete="off"  name="login" >
 
             <label for="user_password" class="sr-only">Пароль</label>
-            <input type="password" id="user_password" class="form-control" name="password" placeholder="Пароль" required>
+            <input type="password" id="user_password" class="form-control" name="password" autocomplete="off" placeholder="Пароль" >
 
             <label for="user_password_repeat" class="sr-only">Повторите пароль</label>
-            <input type="password" id="user_password_repeat" name="password_confirmation" class="form-control" placeholder="Пароль (ещё раз)" required>
+            <input type="password" id="user_password_repeat" name="password_confirmation" autocomplete="off"  class="form-control" placeholder="Пароль (ещё раз)" >
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
         </form>

@@ -10,6 +10,14 @@ class PostRequest extends FormRequest
     const POST_COLUMN = 'post';
 
     /**
+     * PostRequest constructor.
+     */
+    public function __construct()
+    {
+        $this->redirect = route('home');
+    }
+
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool

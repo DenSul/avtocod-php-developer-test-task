@@ -39,6 +39,12 @@ return [
             'prefix' => 'ac_',
         ],
 
+        'sqlite-test' => [
+            'driver' => 'sqlite',
+            'database' => database_path('test.sqlite'),
+            'prefix' => 'ac_',
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

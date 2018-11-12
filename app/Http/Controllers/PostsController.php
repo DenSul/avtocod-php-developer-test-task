@@ -50,7 +50,7 @@ class PostsController extends Controller
     public function delete(Request $request, int $id)
     {
         $this->postService->delete($id);
-        return response()->redirectTo(route('posts'));
+        return response()->redirectTo(route('home'))->with('status', 'Сообщение успешно удалили');
     }
 
     /**
@@ -63,6 +63,6 @@ class PostsController extends Controller
         $post = new Post($request->input('post'), Auth::user()->id);
         $this->postService->create($post);
 
-        return response()->redirectTo(route('posts'))->with('status', 'Сообщение успешно отправлено');
+        return response()->redirectTo(route('home'))->with('status', 'Сообщение успешно создано');
     }
 }

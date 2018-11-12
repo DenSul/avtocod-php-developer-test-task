@@ -20,10 +20,10 @@
             <h2 class="form-signin-heading">Авторизация</h2>
 
             <label for="user_login" class="sr-only">Логин</label>
-            <input type="text" name="login" id="user_login" class="form-control" placeholder="Логин" required autofocus>
+            <input type="text" name="login" id="user_login" class="form-control" placeholder="Логин" autofocus>
 
             <label for="user_password" class="sr-only">Пароль</label>
-            <input type="password" name="password" id="user_password" class="form-control" placeholder="Пароль" required>
+            <input type="password" name="password" id="user_password" class="form-control" placeholder="Пароль">
 
             <div class="checkbox">
                 <label>
