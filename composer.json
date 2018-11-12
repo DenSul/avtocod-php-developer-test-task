@@ -50,7 +50,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover 1> /dev/null"
+            "@php artisan package:discover 1> /dev/null",
+            "touch database/database.sqlite"
         ],
         "test": "@php ./vendor/bin/phpunit --no-coverage",
         "test-cover": "@php ./vendor/bin/phpunit",
